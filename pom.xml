@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>ru.netology</groupId>
+    <artifactId>user-service-api-aggregator</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>user-service-api-aggregator</name>
+    <description>user-service-api-aggregator</description>
+
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.3.5</version>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <!-- from OpenApi swagger json to Java Client Code  -->
+<!--            <plugin>-->
+<!--                <groupId>io.swagger.codegen.v3</groupId>-->
+<!--                <artifactId>swagger-codegen-maven-plugin</artifactId>-->
+<!--                <version>3.0.31</version>-->
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>com.github.jknack</groupId>-->
+<!--                        <artifactId>handlebars</artifactId>-->
+<!--                        <version>4.3.0</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>generate-dtos-of-user-service</id>-->
+<!--                        <phase>compile</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>generate</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <inputSpec>http://localhost:8081/api-docs</inputSpec>-->
+<!--                            <modelPackage>ru.netology.userserviceapiaggregator.dto</modelPackage>-->
+<!--                            <language>spring</language>-->
+<!--                            <generateApiDocumentation>false</generateApiDocumentation>-->
+<!--                            <generateApis>false</generateApis>-->
+<!--                            <generateApiTests>false</generateApiTests>-->
+<!--                            <generateSupportingFiles>false</generateSupportingFiles>-->
+<!--                            <generateModels>true</generateModels>-->
+<!--                            <generateModelTests>false</generateModelTests>-->
+<!--                            <configOptions>-->
+<!--                                <java8>true</java8>-->
+<!--                                <jakarta>true</jakarta>-->
+<!--                                <hideGenerationTimestamp>true</hideGenerationTimestamp>-->
+<!--                                <interfaceOnly>true</interfaceOnly>-->
+<!--                                <defaultInterfaces>false</defaultInterfaces>-->
+<!--                            </configOptions>-->
+<!--                            <additionalProperties>-->
+<!--                                <jakarta>true</jakarta>-->
+<!--                                <hideGenerationTimestamp>true</hideGenerationTimestamp>-->
+<!--                            </additionalProperties>-->
+<!--                            <typeMappings>-->
+<!--                                <typeMapping>OffsetDateTime=Instant</typeMapping>-->
+<!--                                <typeMapping>Double=java.math.BigDecimal</typeMapping>-->
+<!--                            </typeMappings>-->
+<!--                            <importMappings>-->
+<!--                                <importMapping>java.time.OffsetDateTime=java.time.Instant</importMapping>-->
+<!--                            </importMappings>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+        </plugins>
+    </build>
+
+</project>
